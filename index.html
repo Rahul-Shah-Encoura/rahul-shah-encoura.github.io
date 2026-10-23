@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Rahul's Shelf</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="wrap">
+    <h1>Rahul's Shelf</h1>
+    <p class="lede">Docs, prototypes and small tools I've built. Poke around.</p>
+    <nav class="filters" aria-label="Filter by type">
+      <button class="chip is-active" data-filter="all">All</button>
+      <button class="chip" data-filter="doc">Docs</button>
+      <button class="chip" data-filter="prototype">Prototypes</button>
+      <button class="chip" data-filter="tool">Tools</button>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <ul id="items" class="grid"></ul>
+    <p id="empty" class="empty" hidden>Nothing here yet.</p>
+  </main>
+
+  <footer class="wrap">
+    <p>Maintained by Rahul Shah.</p>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

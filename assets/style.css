@@ -1,0 +1,99 @@
+:root {
+  --bg: #fafaf7;
+  --surface: #ffffff;
+  --text: #1c1c1a;
+  --muted: #6b6b66;
+  --border: #e4e3dd;
+  --accent: #2f5bd3;
+  --doc: #2f7a4f;
+  --prototype: #8a4bd1;
+  --tool: #b5651d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141413;
+    --surface: #1d1d1b;
+    --text: #ecebe6;
+    --muted: #9d9c95;
+    --border: #2f2f2c;
+    --accent: #7c9cf0;
+    --doc: #6cc394;
+    --prototype: #b994ec;
+    --tool: #e0a066;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+header { padding-top: 56px; padding-bottom: 24px; }
+h1 { margin: 0 0 4px; font-size: 2rem; letter-spacing: -0.02em; }
+.lede { margin: 0 0 24px; color: var(--muted); }
+
+.filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  font: inherit;
+  font-size: 0.875rem;
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+.chip.is-active { background: var(--text); color: var(--bg); border-color: var(--text); }
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  display: block;
+  height: 100%;
+  padding: 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.card:hover, .card:focus-visible { border-color: var(--accent); transform: translateY(-2px); }
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+}
+.tag[data-type="doc"] { color: var(--doc); }
+.tag[data-type="prototype"] { color: var(--prototype); }
+.tag[data-type="tool"] { color: var(--tool); }
+
+.card h2 { margin: 6px 0 6px; font-size: 1.1rem; }
+.card p { margin: 0; color: var(--muted); font-size: 0.925rem; }
+.card time { display: block; margin-top: 12px; font-size: 0.8rem; color: var(--muted); }
+
+.empty { color: var(--muted); }
+
+footer { padding-top: 48px; padding-bottom: 48px; color: var(--muted); font-size: 0.875rem; }
